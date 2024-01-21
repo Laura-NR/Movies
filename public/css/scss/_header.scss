@@ -1,0 +1,108 @@
+header {
+    height: 100px;
+    background-color: #F7B32B;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+
+    #logo {
+        width: 35%;
+        height: 80px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        margin-left: -125px;
+    }
+
+    img {
+        width: 150px;
+        height: auto;
+        object-fit: cover;
+        margin-left: 50px;
+    }
+
+    #header-elements {
+        width: 40%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: flex-end;  
+        margin-right: -50px; 
+        margin-bottom: 10px; 
+
+        button {
+            border: none;
+            background-color: transparent;
+            width: 60px;
+        }
+
+        img {
+            height: 22px;
+            object-fit: contain;
+            margin-left: 1px;
+            margin-right: 1px;
+        }
+
+        .searchbar {
+            width: 250px;
+            height: 24px;
+            background-color: white;
+            border-radius: 30px;
+            position: relative;
+            display: inline-block;
+            margin-left: 50px;
+            margin-right: -35px;
+            margin-bottom: 5px;
+
+            #search {
+                width: 250px;
+                height: 24px;
+                background-color: transparent;
+                border: none;
+                border-radius: 30px;
+                padding: 0 10px;
+            }
+
+            img {
+                height: 20px;
+                object-fit: contain;
+                position: absolute;
+                top: 50%;
+                right: -50px;
+                transform: translateY(-50%);
+                cursor: pointer;
+            }
+        }
+    }
+
+    nav {
+        width: 100vw;
+        height: 40px;
+        background-color: #000623;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+
+        a {
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            color: #000623;
+            background-color: white;
+            height: 20px;
+            padding: 0 15px;
+            border-radius: 30px;
+
+            img {
+                width: 18px;
+                object-fit: contain;
+                margin-left: 1px;
+            }
+        }
+    }
+}

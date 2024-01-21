@@ -1,0 +1,175 @@
+:root {
+  --primary-color: #000000;
+  --active-color: #000000;
+  --background-color: #ffffff;
+  --default-color: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  max-width: 1300px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, main {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, main {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+header {
+  height: 100px;
+  background-color: #F7B32B;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+header #logo {
+  width: 35%;
+  height: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: -125px;
+}
+header img {
+  width: 150px;
+  height: auto;
+  object-fit: cover;
+  margin-left: 50px;
+}
+header #header-elements {
+  width: 40%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-right: -50px;
+  margin-bottom: 10px;
+}
+header #header-elements button {
+  border: none;
+  background-color: transparent;
+  width: 60px;
+}
+header #header-elements img {
+  height: 22px;
+  object-fit: contain;
+  margin-left: 1px;
+  margin-right: 1px;
+}
+header #header-elements .searchbar {
+  width: 250px;
+  height: 24px;
+  background-color: white;
+  border-radius: 30px;
+  position: relative;
+  display: inline-block;
+  margin-left: 50px;
+  margin-right: -35px;
+  margin-bottom: 5px;
+}
+header #header-elements .searchbar #search {
+  width: 250px;
+  height: 24px;
+  background-color: transparent;
+  border: none;
+  border-radius: 30px;
+  padding: 0 10px;
+}
+header #header-elements .searchbar img {
+  height: 20px;
+  object-fit: contain;
+  position: absolute;
+  top: 50%;
+  right: -50px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+header nav {
+  width: 100vw;
+  height: 40px;
+  background-color: #000623;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+header nav a {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  color: #000623;
+  background-color: white;
+  height: 20px;
+  padding: 0 15px;
+  border-radius: 30px;
+}
+header nav a img {
+  width: 18px;
+  object-fit: contain;
+  margin-left: 1px;
+}
+
+/*# sourceMappingURL=style.css.map */
