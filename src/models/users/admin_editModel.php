@@ -2,10 +2,39 @@
 
 $db;
 
+function getUser() {
+
+    global $db;
+    try {
+        $sql = 'SELECT * FROM users WHERE id = :id';
+        $query = $db->prepare($sql);
+        $query->execute(['id' => $_GET['id']]);
+
+        return $query->fetch();
+    } catch (PDOException $e) {
+        if ($_ENV['DEBUG'] == 'true') {
+            dump($e->getMessage());
+            die;
+        } else {
+            alert ('Une erreur est survenue. Merci de réessayer plus tard', 'danger');
+        } 
+    }
+    
+}
+
 //Check if the email is already in the database
 function checkAlreadyExistEmail(): mixed {
 
     global $db;
+
+    if (!empty($_GET['id'])) {
+        $email = getUser()->email;
+
+        if ($email === $_POST['email']) {
+            return false;
+        }
+    }
+    
     
     $sql = 'SELECT * FROM users WHERE email = :email';
     $query = $db->prepare($sql);
@@ -17,7 +46,7 @@ function checkAlreadyExistEmail(): mixed {
 
 
 //Add a new user to the database
-function addUser(): bool {
+function addUser($message) {
 
     global $db;
 
@@ -28,15 +57,18 @@ function addUser(): bool {
     ];
 
     try {
-        $sql = 'INSERT INTO users (email, pwd, role_id) VALUES (:email, :pwd, :role_id)';
+        $sql = 'INSERT INTO users (id, email, pwd, role_id) VALUES (:email, :pwd, :role_id)';
         $query = $db->prepare($sql);
         $query->execute($data);
+        alert('Un utilisateur a été ajouté avec success', 'success');
     } catch (PDOException $e) {
-        dump($e->getMessage());
-        die;
+        if ($_ENV['DEBUG'] == 'true') {
+            dump($e->getMessage());
+            die;
+        } else {
+            alert ('Une erreur est survenue. Merci de réessayer plus tard', 'danger');
+        } 
     }
-
-    return true;
 };
 
 
@@ -52,13 +84,19 @@ function updateUser(): bool {
     ];
 
     try {
-        $sql = 'UPDATE users SET email = :email, pwd = :pwd WHERE role_id = :role_id';
+        $sql = 'UPDATE users SET email = :email, pwd = :pwd, modified = NOW() WHERE role_id = :role_id';
         $query = $db->prepare($sql);
         $query->execute($data);
+        alert('Un utilisateur a été modifié avec success', 'success');
     } catch (PDOException $e) {
-        dump($e->getMessage());
-        die;
+        if ($_ENV['DEBUG'] == 'true') {
+            dump($e->getMessage());
+            die;
+        } else {
+            alert ('Une erreur est survenue. Merci de réessayer plus tard', 'danger');
+        } 
     }
 
     return true;
 };
+
