@@ -20,6 +20,21 @@ function addFilm(): bool {
 
     global $db;
 
+
+    // File upload handling
+    $uploadDirectory = __DIR__ . "/uploads/";  // Directory to store the uploaded files
+
+    $uploadedFile = isset($_FILES['poster']) ? $_FILES['poster'] : null;
+
+    $filename = isset($_FILES['poster']['name']) ? pathinfo($uploadedFile['name'], PATHINFO_FILENAME) : null;
+    $extension = isset($_FILES['poster']['name']) ? pathinfo($uploadedFile['name'], PATHINFO_EXTENSION) : null;
+
+    // Sanitize and generate a unique filename
+    $base = $filename !== null ? preg_replace("/[^\w-]/", "_", $filename) : null;
+    $filename = $base !== null ? $base . "." . $extension : null;
+
+    $destination = $uploadDirectory . $filename;
+
     $data = [
         'title' => $_POST['title'],
         'note_press' => $_POST['note'],
@@ -28,12 +43,13 @@ function addFilm(): bool {
         'director' => $_POST['director'],
         'category' => $_POST['category'],
         'casting' => $_POST['casting'],
-        'synopsis' => $_POST['synopsis']
+        'synopsis' => $_POST['synopsis'],
+        'poster' => $destination
     ];
 
     try {
-        $sql = 'INSERT INTO movies (title, note_press, date_release, duration, director, category, casting, synopsis) 
-                VALUES (:title, :note_press, :date_release, :duration, :director, :category, :casting, :synopsis)';
+        $sql = 'INSERT INTO movies (title, note_press, date_release, duration, director, category, casting, synopsis, poster) 
+                VALUES (:title, :note_press, :date_release, :duration, :director, :category, :casting, :synopsis, :poster)';
         $query = $db->prepare($sql);
         $query->execute($data);
     } catch (PDOException $e) {
@@ -57,6 +73,7 @@ function updateFilm(): bool {
         'category' => $_POST['category'],
         'casting' => $_POST['casting'],
         'synopsis' => $_POST['synopsis'],
+        'poster' => $_FILES['poster'],
         'id' => $_GET['id']
     ];
 

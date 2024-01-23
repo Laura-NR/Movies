@@ -16,8 +16,8 @@
             <tr>
                 <td class="align-middle"><?= $user->email; ?></td>
                 <td class="text-center align-middle">
-                    <a href="<?= $router->generate('editUser', ['id' => $user->id]); ?>">Editer</a>
-                    <a href="<?= $router->generate('deleteUser', ['id' =>  $user->id]); ?>">Supprimer</a>
+                    <a href="<?= $router->generate('editUser', ['id' => $user->id]); ?>" class="btn btn-warning">Editer</a>
+                    <a href="<?= $router->generate('deleteUser', ['id' =>  $user->id]); ?>" class="btn btn-danger">Supprimer</a>
                 </td>
             </tr>
         <?php } ?>

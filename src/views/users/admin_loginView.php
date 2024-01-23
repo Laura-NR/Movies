@@ -84,6 +84,11 @@
     .connect:focus {
         opacity: 0.8;
     }
+
+    a {
+        color:#F7B32B;
+        text-decoration: none;
+    }
 </style>
 
 <div class="py-4 vertical-center">

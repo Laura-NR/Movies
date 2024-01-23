@@ -5,19 +5,19 @@
 <form action="" method="post" novalidate>
     <div class="row">
         <div class="col-md-9 mb-4">
-        <?php $error = checkEmptyFields('title'); ?>
-            <label for="title" class="form-label">Titre du film: *</label>
-            <input type="text" id="title" name="title" value="<?= getValueField('title'); ?>" class="form-control <?= $error['class']; ?>">
-        <?= $error['message']; ?>
-        <?= $errorsMessage['title']; ?>
-    </div>
-    <div class="col-md-3 mb-4">
-        <?php $error = checkEmptyFields('note'); ?>
-            <label for="note" class="form-label">Note press: *</label>
-            <input type="text" id="note" name="note" value="<?= getValueField('note'); ?>" class="form-control <?= $error['class']; ?>">
-        <?= $error['message']; ?>
-        <?= $errorsMessage['note']; ?>
-    </div>
+            <?php $error = checkEmptyFields('title'); ?>
+                <label for="title" class="form-label">Titre du film: *</label>
+                <input type="text" id="title" name="title" value="<?= getValueField('title'); ?>" class="form-control <?= $error['class']; ?>">
+            <?= $error['message']; ?>
+            <?= $errorsMessage['title']; ?>
+        </div>
+        <div class="col-md-3 mb-4">
+            <?php $error = checkEmptyFields('note'); ?>
+                <label for="note" class="form-label">Note press: *</label>
+                <input type="text" id="note" name="note" value="<?= getValueField('note'); ?>" class="form-control <?= $error['class']; ?>">
+            <?= $error['message']; ?>
+            <?= $errorsMessage['note']; ?>
+        </div>
     </div>
     <div class="row">
         <div class="col mb-4">
@@ -54,12 +54,22 @@
             <?= $errorsMessage['category']; ?>
         </div>
     </div>
-    <div class="mb-4">
-        <?php $error = checkEmptyFields('casting'); ?>
-            <label for="casting" class="form-label">Cast: *</label>
-            <input type="text" id="casting" name="casting" value="<?= getValueField('casting'); ?>" class="form-control <?= $error['class']; ?>">
-        <?= $error['message']; ?>
-        <?= $errorsMessage['casting']; ?>
+    <div class="row">
+        <div class="col-md-7 mb-4">
+            <?php $error = checkEmptyFields('casting'); ?>
+                <label for="casting" class="form-label">Cast: *</label>
+                <input type="text" id="casting" name="casting" value="<?= getValueField('casting'); ?>" class="form-control <?= $error['class']; ?>">
+            <?= $error['message']; ?>
+            <?= $errorsMessage['casting']; ?>
+        </div>
+        <div class="col-md-5 mb-4">
+            <?php $error = checkEmptyFields('poster'); ?>
+                <label for="poster" class="form-label">Affiche: *</label>
+                <input type="file" id="poster" name="poster" value="<?= getValueField('poster'); ?>" class="form-control <?= $error['class']; ?>">
+                <p class="form-text">Taille maximale du fichier: 5MB</p>
+            <?= $error['message']; ?>
+            <?= $errorsMessage['poster']; ?>
+        </div>
     </div>
     <div class="mb-4">
         <?php $error = checkEmptyFields('synopsis'); ?>
