@@ -2,7 +2,7 @@
 
 <h1 class="mb-4">Ajouter un film</h1>
 
-<form action="" method="post" novalidate>
+<form action="" method="post" enctype="multipart/form-data" novalidate>
     <div class="row">
         <div class="col-md-9 mb-4">
             <?php $error = checkEmptyFields('title'); ?>
@@ -12,18 +12,18 @@
             <?= $errorsMessage['title']; ?>
         </div>
         <div class="col-md-3 mb-4">
-            <?php $error = checkEmptyFields('note'); ?>
-                <label for="note" class="form-label">Note press: *</label>
-                <input type="text" id="note" name="note" value="<?= getValueField('note'); ?>" class="form-control <?= $error['class']; ?>">
+            <?php $error = checkEmptyFields('note_press'); ?>
+                <label for="note_press" class="form-label">Note press: *</label>
+                <input type="text" id="note_press" name="note_press" value="<?= getValueField('note_press'); ?>" class="form-control <?= $error['class']; ?>">
             <?= $error['message']; ?>
-            <?= $errorsMessage['note']; ?>
+            <?= $errorsMessage['note_press']; ?>
         </div>
     </div>
     <div class="row">
         <div class="col mb-4">
-            <?php $error = checkEmptyFields('date'); ?>
+            <?php $error = checkEmptyFields('date_release'); ?>
                 <label for="date_release" class="form-label">Date de sortie: *</label>
-                <input type="date" id="date_release" name="date_release" value="<?= getValueField('date'); ?>" class="form-control <?= $error['class']; ?>">
+                <input type="date" id="date_release" name="date_release" value="<?= getValueField('date_release'); ?>" class="form-control <?= $error['class']; ?>">
             <?= $error['message']; ?>
             <?= $errorsMessage['date_release']; ?>
         </div>
@@ -65,7 +65,7 @@
         <div class="col-md-5 mb-4">
             <?php $error = checkEmptyFields('poster'); ?>
                 <label for="poster" class="form-label">Affiche: *</label>
-                <input type="file" id="poster" name="poster" value="<?= getValueField('poster'); ?>" class="form-control <?= $error['class']; ?>">
+                <input type="file" id="poster" name="poster" class="form-control <?= $error['class']; ?>">
                 <p class="form-text">Taille maximale du fichier: 5MB</p>
             <?= $error['message']; ?>
             <?= $errorsMessage['poster']; ?>

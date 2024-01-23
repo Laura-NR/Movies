@@ -35,9 +35,16 @@ function addFilm(): bool {
 
     $destination = $uploadDirectory . $filename;
 
+    print_r($_FILES);
+    print_r($uploadedFile);
+    print_r($filename);
+    print_r($extension);
+    print_r($base);
+    print_r($destination);
+
     $data = [
         'title' => $_POST['title'],
-        'note_press' => $_POST['note'],
+        'note_press' => $_POST['note_press'],
         'date_release' => $_POST['date_release'],
         'duration' => $_POST['duration'],
         'director' => $_POST['director'],
@@ -46,6 +53,7 @@ function addFilm(): bool {
         'synopsis' => $_POST['synopsis'],
         'poster' => $destination
     ];
+
 
     try {
         $sql = 'INSERT INTO movies (title, note_press, date_release, duration, director, category, casting, synopsis, poster) 
@@ -66,7 +74,7 @@ function updateFilm(): bool {
 
     $data = [
         'title' => $_POST['title'],
-        'note_press' => $_POST['note'],
+        'note_press' => $_POST['note_press'],
         'date_release' => $_POST['date_release'],
         'duration' => $_POST['duration'],
         'director' => $_POST['director'],
