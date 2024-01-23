@@ -50,4 +50,3 @@ if (!empty($_POST)) {
 } else if (!empty($_GET['id'])) {
     $_POST = (array) getUser();
 };
-

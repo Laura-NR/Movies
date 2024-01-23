@@ -57,7 +57,7 @@ function addUser($message) {
     ];
 
     try {
-        $sql = 'INSERT INTO users (id, email, pwd, role_id) VALUES (:email, :pwd, :role_id)';
+        $sql = 'INSERT INTO users (id, email, pwd, role_id) VALUES (UUID(), :email, :pwd, :role_id)';
         $query = $db->prepare($sql);
         $query->execute($data);
         alert('Un utilisateur a été ajouté avec success', 'success');
