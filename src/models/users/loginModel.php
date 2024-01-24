@@ -17,3 +17,11 @@ function checkUserAccess() {
     
 }
 
+function saveLastLogin(string $userId) {
+    global $db;
+    $sql = 'UPDATE users SET last_login = NOW() WHERE id = :id';
+    $query = $db->prepare($sql);
+    $query->execute(['id' => $userId]);
+
+    /* return $query->rowCount(); */
+}
