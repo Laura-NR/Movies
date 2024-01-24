@@ -11,21 +11,22 @@ $dotenv->load();
 
 session_start();
 
-
 require SRC . 'config/database.php';
 require SRC . 'includes/forms.php';
+require SRC . 'includes/functions.php';
 
 $router = new AltoRouter();
 
 require SRC . 'routes/public.php';
 require SRC . 'routes/admin.php';
 
+logoutTimer();
+
 
 $router->map( 'GET', '/', 'home', 'home');
 
 $match = $router->match();
 
-require SRC . 'includes/functions.php';
 if (!empty($match['target'])) {
     checkadmin($match, $router);
 

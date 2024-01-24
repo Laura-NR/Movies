@@ -48,9 +48,29 @@
     function checkAdmin(array $match, Altorouter $router) {
         $existsAdmin = strpos($match['target'], 'admin_');
 
-        if ($existsAdmin !== false && empty($_SESSION['user'])) {
+        if ($existsAdmin !== false && empty($_SESSION['user']['id'])) {
             header('Location: ' . $router->generate('login'));
             die;
+        }
+    }
+
+    function logoutTimer() {
+        global $router; 
+
+        if (!empty($_SESSION['user']['last_login'])) {
+           $expireHour = 1;
+
+           $now = new DateTime();
+           $now->setTimezone(new DateTimeZone('Europe/Paris'));
+
+           $last_login = new DateTime($_SESSION['user']['last_login']);
+
+           if ($now->diff($last_login)->i >= $expireHour) {
+                unset($_SESSION['user']);
+                alert('Vous avez été déconnecté pour inactivité', 'danger');
+                header('Location: ' . $router->generate('login'));
+                die;
+           };
         }
     }
 

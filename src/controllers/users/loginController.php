@@ -3,7 +3,10 @@
 if (!empty($_POST['email']) && !empty($_POST['pwd'])) {
     $accessUser = checkUserAccess();
     if (checkUserAccess()) {
-        $_SESSION['user'] = $accessUser;
+        $_SESSION['user'] = [
+            'id' => $accessUser,
+            'last_login' => date('Y-m-d H:i:s')
+        ];
 
         saveLastLogin($accessUser);
 
