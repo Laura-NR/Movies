@@ -29,8 +29,8 @@
                 <td class="align-middle"><?= $film->synopsis; ?></td>
                 <td class="align-middle"><?= $film->note_press; ?></td>
                 <td class="text-center align-middle">
-                    <a href="<?= $router->generate('editUser', ['id' => $film->id]); ?>" class="btn btn-warning">Editer</a>
-                    <a href="<?= $router->generate('deleteUser', ['id' =>  $film->id]); ?>" class="btn btn-danger">Supprimer</a>
+                    <a href="<?= $router->generate('editFilm', ['id' => $film->id]); ?>" class="btn btn-warning">Editer</a>
+                    <a href="<?= $router->generate('deleteFilm', ['id' =>  $film->id]); ?>" class="btn btn-danger">Supprimer</a>
                 </td>
             </tr>
         <?php } ?>

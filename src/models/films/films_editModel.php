@@ -35,12 +35,7 @@ function addFilm(): bool {
 
     $destination = $uploadDirectory . $filename;
 
-    print_r($_FILES);
-    print_r($uploadedFile);
-    print_r($filename);
-    print_r($extension);
-    print_r($base);
-    print_r($destination);
+    move_uploaded_file($uploadedFile['tmp_name'], $destination);
 
     $data = [
         'title' => $_POST['title'],
