@@ -1,9 +1,9 @@
 <?php
 
 // Users
-$router->map( 'GET', '/connexion', 'login', 'login');
+$router->map( 'GET', '/connexion', 'login', 'userLogin');
 $router->map( 'GET', '/inscription', 'signUp', 'signUp');
-$router->map( 'GET', '/deconnexion', 'logout', 'logout');
+$router->map( 'GET', '/deconnexion', 'logout', 'userLogout');
 $router->map( 'GET', '/mot-de-passe-oublie', 'forgottenPassword');
 $router->map( 'GET', '/profil', 'profile');
 

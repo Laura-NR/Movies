@@ -3,6 +3,7 @@
     
     function get_header(string $title, string $layouts = 'public'): void
      {
+        global $router;
         require_once '../src/views/layouts/' . $layouts. '/header.php';
     } 
     
@@ -37,6 +38,20 @@
             unset($_SESSION['alert']);
         };
         
+    }
+
+    /**
+     * Check if user is logged in
+     * @param array $match The match array from Altorouter
+     * @param Altorouter $router The router
+     */
+    function checkAdmin(array $match, Altorouter $router) {
+        $existsAdmin = strpos($match['target'], 'admin_');
+
+        if ($existsAdmin !== false && empty($_SESSION['user'])) {
+            header('Location: ' . $router->generate('login'));
+            die;
+        }
     }
 
 ?>

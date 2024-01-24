@@ -25,11 +25,11 @@
                         </li>
                     </ul>
                     <div class="navbar-text">
-                        <a href="" class="btn btn-danger text-light">Déconnexion</a>
+                        <a href="<?= $router->generate('logout'); ?>" class="btn btn-danger text-light">Déconnexion</a>
                     </div>
                 </div>
             </div>
         </nav>
     </header>
     <main class="container mb-4">
-        <?php echo displayAlert(); ?>
+        <?php displayAlert(); ?>

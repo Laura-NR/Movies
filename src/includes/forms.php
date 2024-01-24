@@ -22,7 +22,7 @@ function checkEmptyFields ($field, $message = 'Veuillez renseigner cette informa
 
 //Return value of field
 
-function getValueFIeld(string $field):string {
+function getValueFIeld(string $field): string {
     if (isset($_POST[$field])) {
         return $_POST[$field];
     }
