@@ -10,4 +10,4 @@
     <title><?= $title; ?> | Movies</title>
 </head>
 <body>
-    
+    <?php displayAlert(); ?>

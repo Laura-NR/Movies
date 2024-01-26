@@ -1,0 +1,11 @@
+Hello {{ dump(movies[0].title) }}
+
+<ul>
+    {% for movie in movies %}
+        <li>
+            <h2>{{ movie.title }}</h2>
+            <p>{{ movie.synopsis }}</p>
+            <img src="{{ movie.poster }}" alt="{{ movie.title }}">
+        </li>
+    {% endfor %}
+</ul>

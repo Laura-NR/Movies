@@ -22,7 +22,7 @@ function addFilm(): bool {
 
 
     // File upload handling
-    $uploadDirectory = __DIR__ . "/uploads/";  // Directory to store the uploaded files
+    $uploadDirectory = "uploads/";  // Directory to store the uploaded files
 
     $uploadedFile = isset($_FILES['poster']) ? $_FILES['poster'] : null;
 

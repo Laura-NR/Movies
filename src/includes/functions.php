@@ -32,7 +32,7 @@
      * @return void
      */
     function displayAlert(): void {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_SESSION['alert'])) {
+        if (!empty($_SESSION['alert'])) {
             echo '<div class="alert alert-' . $_SESSION['alert']['type'] . '" role="alert">' . $_SESSION['alert']['message'] . '</div>';
 
             unset($_SESSION['alert']);

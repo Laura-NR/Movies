@@ -1,0 +1,4 @@
+<?php
+
+
+$data['movies'] = getMovies();

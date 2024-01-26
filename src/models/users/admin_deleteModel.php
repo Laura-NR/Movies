@@ -12,10 +12,10 @@ function deleteUser() {
         $query = $db->prepare($sql);
         $query->execute(['id' => $_GET['id']]);
 
-        return $query->fetchAll();
+        alert('L\'utilisateur a bien été supprimé.', 'success');
     } catch (PDOException $e) {
         if ($_ENV['DEBUG'] == 'true') {
-            dump($e->getMessage());
+            //dump($e->getMessage());
             die;
         } else {
             alert ('Une erreur est survenue. Merci de réessayer plus tard', 'danger');
@@ -51,4 +51,3 @@ function countUsers() {
 
         return $query->fetchColumn();
 };
-countUsers();
