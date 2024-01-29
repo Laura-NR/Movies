@@ -10,23 +10,10 @@
 $title-font: 'Roboto' , sans-serif;
 $default-font: 'Arial' , sans-serif; 
 
-* {
-    box-sizing: border-box;
-  }
-  
-  .wrapper {
-    max-width: 1300px;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-around;
-  }
 
 //Imports
 @import '_reset';
+@import '_mixins';
 @import '_fonts';
 @import '_default';
 @import '_header';

@@ -32,6 +32,7 @@ $match = $router->match();
 $loader = new \Twig\Loader\FilesystemLoader(SRC . 'views');
 $twig = new \Twig\Environment($loader, ['cache' => false, 'debug' => true]);
 $twig->addExtension(new \Twig\Extension\DebugExtension());
+require_once SRC . 'includes/twig.php';
 
 if (!empty($match['target'])) {
     checkadmin($match, $router);
