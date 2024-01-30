@@ -1,6 +1,6 @@
 <?php 
 
-$movie = getFilms();
+$movie = getMovies();
 
 if ($movie) {
 	$data['movie'] = $movie;

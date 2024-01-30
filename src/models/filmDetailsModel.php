@@ -1,6 +1,6 @@
 <?php 
 
-function getFilms() {
+function getMovies() {
 
     global $db;
 

@@ -52,10 +52,10 @@ if (isset($_FILES["poster"]) && $_FILES["poster"]["error"] !== UPLOAD_ERR_OK) {
 
 // Reject uploaded file larger than 5MB
 if (isset($_FILES["poster"]["size"]) && $_FILES["poster"]["size"] > 5242880) {
-    $errorsMessage['poster'] = 'File too large (max 5MB)';
+    $errorsMessage['poster'] = 'File too large (max  ' . formatbytes(5242880) . ')';
 }
 
-//Reject file name larger than 100 characters
+//Reject file name larger than 50 characters
 if (isset($_FILES['poster'])) {
     $name = $_FILES['poster']['name'];
     $maxNameLength = 50;
@@ -69,7 +69,7 @@ if (isset($_FILES['poster'])) {
 $finfo = new finfo(FILEINFO_MIME_TYPE);
 $mime_type = (isset($_FILES["poster"]["tmp_name"])) && !empty($_FILES["poster"]["tmp_name"]) ? $finfo->file($_FILES["poster"]["tmp_name"]) : null;
 
-$mime_types = ["image/gif", "image/png", "image/jpeg"];
+$mime_types = ["image/jpg", "image/png", "image/jpeg"];
         
 if (isset($_FILES["poster"]["type"]) && !in_array($_FILES["poster"]["type"], $mime_types)) {
     exit("Invalid file type");
@@ -107,5 +107,5 @@ if (!empty($_POST)) {
     };
 
 } else if (!empty($_GET['id'])) {
-    $_POST = (array) getFilms();
+    $_POST = (array) getFilm();
 };
