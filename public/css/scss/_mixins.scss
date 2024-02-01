@@ -1,15 +1,11 @@
-/* Reusable code @mixin to create general styles for different elements. After all that has to be done is write 
-@import + the name of the mixing to add the style to the element and the continue with the styling */
-
-/* @use "sass:math";
-
-/** Font size convert 
-@function calculateRem($size) {
-    $remSize: math.div($size, 16px);
-    @return #{$remSize}rem;
+@mixin button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
 
-@mixin fontSize($size) {
-    font-size: $size;
-    font-size: calculateRem($size);
-} */
+@mixin ellipse {
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+}

@@ -1,0 +1,54 @@
+#carousel-section {
+    max-width: 1400px;
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+
+    #img_buttons {
+        display: flex;
+        flex-direction: row;
+
+        button {
+            @include button; 
+        }
+
+        img {
+            width: 1150px;
+            height: auto;
+            display: none;
+        }
+
+        img[data-active] {
+            display: block;
+        }
+    }
+
+    #dots {
+        margin-top: 10px;
+
+        ul { 
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            
+            #el_1 {
+                @include ellipse;
+                background-color: #060623;
+                border: 2px solid #060623;
+                  
+            }
+                
+            #el_2, #el_3 {
+                @include ellipse;
+                background-color: #ffffff;
+                border: 2px solid #060623;
+                margin-left: 3px;
+            }
+        } 
+    }
+
+    
+}
+
+
