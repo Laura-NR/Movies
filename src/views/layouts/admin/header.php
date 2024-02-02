@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../../../public/css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../../../public/css/style.css">
     <link rel="shortcut icon" href="../../../../public/images/mixxcinema-high-resolution-logo-darkmode.png" type="image/x-icon" id="favicon">
     <title><?= $title; ?> | Movies</title>
     <style>
@@ -115,10 +115,6 @@
             justify-content: space-between;
         }
 
-        header .wrapper nav #logout_button {
-            width: 3%;
-        }
-
         header nav a {
             padding: 1px 25px;
         }
@@ -152,19 +148,15 @@
         </div>
         <nav>
             <div class="wrapper">
-                <a href="">Users<svg xmlns="http://www.w3.org/2000/svg" width="18.467" height="9.626" xmlns:v="https://vecta.io/nano">
+                <a href="<?= $router->generate('users'); ?>">Users<svg xmlns="http://www.w3.org/2000/svg" width="18.467" height="9.626" xmlns:v="https://vecta.io/nano">
                     <path d="M17.962 0H1.5A1.5 1.5 0 0 0 .443 2.558l7.2 7.2c1.156 1.154 3.029 1.154 4.185 0L14.57 7.02l4.463-4.463A1.5 
                     1.5 0 0 0 17.962 0z" fill="#060623"/></svg>
                 </a>
-                <a href="">Films<svg xmlns="http://www.w3.org/2000/svg" width="18.467" height="9.626" xmlns:v="https://vecta.io/nano">
+                <a href="<?= $router->generate('listMovies'); ?>">Films<svg xmlns="http://www.w3.org/2000/svg" width="18.467" height="9.626" xmlns:v="https://vecta.io/nano">
                     <path d="M17.962 0H1.5A1.5 1.5 0 0 0 .443 2.558l7.2 7.2c1.156 1.154 3.029 1.154 4.185 0L14.57 7.02l4.463-4.463A1.5 
                     1.5 0 0 0 17.962 0z" fill="#060623"/></svg>
                 </a>
-                <a href="">Genres<svg xmlns="http://www.w3.org/2000/svg" width="18.467" height="9.626" xmlns:v="https://vecta.io/nano">
-                    <path d="M17.962 0H1.5A1.5 1.5 0 0 0 .443 2.558l7.2 7.2c1.156 1.154 3.029 1.154 4.185 0L14.57 7.02l4.463-4.463A1.5 
-                    1.5 0 0 0 17.962 0z" fill="#060623"/></svg>
-                </a>
-                <a href="">Categories<svg xmlns="http://www.w3.org/2000/svg" width="18.467" height="9.626" xmlns:v="https://vecta.io/nano">
+                <a href="<?= $router->generate('listCategories'); ?>">Categories<svg xmlns="http://www.w3.org/2000/svg" width="18.467" height="9.626" xmlns:v="https://vecta.io/nano">
                     <path d="M17.962 0H1.5A1.5 1.5 0 0 0 .443 2.558l7.2 7.2c1.156 1.154 3.029 1.154 4.185 0L14.57 7.02l4.463-4.463A1.5 1.5 
                     0 0 0 17.962 0z" fill="#060623"/></svg>
                 </a>

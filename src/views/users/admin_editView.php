@@ -1,14 +1,44 @@
 <?php get_header('Editer un utilisateur', 'admin'); ?>
 
+<style>
+    h2 {
+        margin-top: 50px;
+        font-size: 28px;
+        font-weight: 600;
+        margin-bottom: 30px;
+    }
 
-<h1 class="mb-4">Editer un utilisateur</h1>
+    #submit_button {
+        color: #F7B32B;
+        background-color: #000623;
+        padding: 5px 20px;
+        border: none;
+        border-radius: 30px;
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    #logout_usersedit {
+        text-decoration: none;
+        padding: 5px 20px;
+        border: none;
+        border-radius: 30px;
+        font-size: 16px;
+        font-weight: 600;
+        background-color: red;
+        color: white;
+        float: right;
+    }
+</style>
+
+
+<h2>Editer un utilisateur</h2>
 
 <form action="" method="post" novalidate>
     <div class="mb-4">
         <?php $error = checkEmptyFields('email'); ?>
             <label for="email" class="form-label">Adresse email: *</label>
             <input type="email" id="email" name="email" value="<?= getValueField('email'); ?>" class="form-control <?= $error['class']; ?>">
-            <p class="invalid-feedback">Message</p>
         <?= $error['message']; ?>
         <?= $errorsMessage['email']; ?>
     </div>
@@ -17,7 +47,6 @@
             <label for="pwd" class="form-label">Mot de passe: *</label>
             <input type="password" id="pwd" name="pwd" value="<?= getValueField('pwd'); ?>" class="form-control <?= $error['class']; ?>">
             <p class="form-text mb-0">Règles de mot de passe</p>
-            <p class="invalid-feedback">Message</p>
         <?= $error['message']; ?>
         <?= $errorsMessage['pwd']; ?>
     </div>
@@ -25,12 +54,12 @@
         <?php $error = checkEmptyFields('email'); ?>
             <label for="pwdConfirm" class="form-label">Confirmation du mot de passe: *</label>
             <input type="password" id="pwdConfirm" name="pwdConfirm" value="<?= getValueField('pwdConfirm'); ?>" class="form-control <?= $error['class']; ?>">
-            <p class="invalid-feedback">Message</p>
         <?= $error['message']; ?>
         <?= $errorsMessage['pwdConfirm']; ?>
     </div>
     <div>
-        <input type="submit" class="btn btn-success mb-5" value="Sauvegarder">
+        <input type="submit" value="Sauvegarder" id="submit_button">
+        <a href="<?= $router->generate('logout'); ?>" id="logout_usersedit">Déconnexion</a>
     </div>
 </form>
 

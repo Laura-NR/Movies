@@ -1,21 +1,21 @@
-<?php get_header('Liste des utilisateurs', 'admin'); ?>
+<?php get_header('Liste des categories', 'admin'); ?>
 
 <style>
-    .wrapper_users {
+    .wrapper_categories {
         max-width: 1000px;
         width: 100%;
         margin-left: auto;
         margin-right: auto;
     }
 
-    .wrapper_users h2 {
+    .wrapper_categories h2 {
         margin-top: 60px;
         font-size: 28px;
         font-weight: 600;
         margin-bottom: 30px;
     }
 
-    .wrapper_users #add_button_users {
+    .wrapper_categories #add_button_categories {
         text-decoration: none;
         color: #F7B32B;
         background-color: #000623;
@@ -26,7 +26,7 @@
         font-weight: 600;
     }
 
-    .wrapper_users #logout_users {
+    .wrapper_categories #logout_categories {
         text-decoration: none;
         padding: 5px 20px;
         border: none;
@@ -38,74 +38,73 @@
         float: right;
     }
 
-    .wrapper_users table {
+    .wrapper_categories table {
         margin-top: 25px;
         width: 100%;
     }
 
-    .wrapper_users table {
+    .wrapper_categories table {
         margin-top: 25px;
         width: 100%;
     }
 
-    .wrapper_users table thead {
+    .wrapper_categories table thead {
         font-size: 20px;
         font-weight: 500;
     }
 
-    .wrapper_users table tr {
+    .wrapper_categories table tr {
         height: 32px;
         text-align: center;
         border-bottom: 2px solid #F7B32B;
     }
 
-    .wrapper_users table tr th {
+    .wrapper_categories table tr th {
         background-color: #F7B32B;
         padding-top: 5px;
     }
 
-    .wrapper_users table tr td {
+    .wrapper_categories table tr td {
         padding-top: 5px;
         border-right: 2px solid #F7B32B;
     }
 
-    .wrapper_users table tr #links_users {
+    .wrapper_categories table tr #links_categories {
         border: none;
     }
 
-    .wrapper_users table tr td a img {
+    .wrapper_categories table tr td a img {
         height: 20px;
         width: auto;
         margin-left: 18px;
     }  
 </style>
 
-<div class="wrapper_users">
-    <h2>Liste des utilisateurs</h2>
+<div class="wrapper_categories">
+    <h2>Liste des Categories</h2>
 
-    <a href="<?= $router->generate('addUser'); ?>" id="add_button_users">Ajouter +</a>
-    <a href="<?= $router->generate('logout'); ?>" id="logout_users">Déconnexion</a>
+    <a href="<?= $router->generate('addCategory'); ?>" id="add_button_categories">Ajouter +</a>
+    <a href="<?= $router->generate('logout'); ?>" id="logout_categories">Déconnexion</a>
 
     <table>
         <thead>
             <tr>
-                <th>Email</th>
+                <th>Categories</th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($users as $user) { ?>
+            <?php foreach ($categories as $category) { ?>
                 <tr>
-                    <td style="width: 75%;"><?= $user->email; ?></td>
-                    <td id="links_users" style="width: 20%;">
-                        <a href="<?= $router->generate('editUser', ['id' => $user->id]); ?>"><img src="/public/images/edit-pencil-line-01-svgrepo-com.svg" alt=""></a>
-                        <a href="<?= $router->generate('deleteUser', ['id' => $user->id]); ?>"><img src="/public/images/trash.svg" alt=""></a>
+                    <td style="width: 75%;"><?= $category->name_category; ?></td>
+                    <td id="links_categories" style="width: 20%;">
+                        <a href="<?= $router->generate('editCategory', ['id' => $category->id]); ?>"><img src="/public/images/edit-pencil-line-01-svgrepo-com.svg" alt=""></a>
+                        <a href="<?= $router->generate('deleteCategory', ['id' => $category->id]); ?>"><img src="/public/images/trash.svg" alt=""></a>
                     </td>
                 </tr>
             <?php } ?>
         </tbody>
     </table>
 </div>
-
 
 <?php get_footer('admin'); ?>

@@ -1,18 +1,18 @@
 <?php 
 
 /**
- * Delete user from the database
+ * Delete category from the database
  */
-function deleteFilm() {
+function deleteCategory() {
 
     try {
         global $db;
 
-        $sql = 'DELETE FROM movies WHERE id = :id';
+        $sql = 'DELETE FROM categories WHERE id = :id';
         $query = $db->prepare($sql);
         $query->execute(['id' => $_GET['id']]);
 
-        alert('Le film a bien été supprimé.', 'success');
+        alert('La categorie a bien été supprimé.', 'success');
     } catch (PDOException $e) {
         if ($_ENV['DEBUG'] == 'true') {
             die;
@@ -23,10 +23,10 @@ function deleteFilm() {
     
 };
 
-function getAlreadyExistFilm () {
+function getAlreadyExistCategory () {
 	try {
 		global $db;
-		$sql = 'SELECT id FROM movies WHERE id = :id';
+		$sql = 'SELECT id FROM categories WHERE id = :id';
 		$query = $db->prepare($sql);
 		$query->execute(['id' => $_GET['id']]);
 
@@ -41,10 +41,10 @@ function getAlreadyExistFilm () {
 	}
 };
 
-function countFilms() {
+function countCategories() {
     global $db;
 
-        $sql = 'SELECT COUNT(*) FROM movies';
+        $sql = 'SELECT COUNT(*) FROM categories';
         $query = $db->prepare($sql);
         $query->execute();
 

@@ -1,6 +1,37 @@
 <?php get_header('Editer un film', 'admin'); ?>
 
-<h1 class="mb-4">Ajouter un film</h1>
+<style>
+    h2 {
+        margin-top: 50px;
+        font-size: 28px;
+        font-weight: 600;
+        margin-bottom: 30px;
+    }
+
+    #submit_button_films {
+        color: #F7B32B;
+        background-color: #000623;
+        padding: 5px 20px;
+        border: none;
+        border-radius: 30px;
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    #logout_films {
+        text-decoration: none;
+        padding: 5px 20px;
+        border: none;
+        border-radius: 30px;
+        font-size: 16px;
+        font-weight: 600;
+        background-color: red;
+        color: white;
+        float: right;
+    }
+</style>
+
+<h2 class="mb-4">Ajouter un film</h2>
 
 <form action="" method="post" enctype="multipart/form-data" novalidate>
     <div class="row">
@@ -79,7 +110,8 @@
         <?= $errorsMessage['synopsis']; ?>
     </div>
     <div>
-        <input type="submit" class="btn btn-success mb-5" value="Sauvegarder">
+        <input type="submit" id="submit_button_films" value="Sauvegarder">
+        <a href="<?= $router->generate('logout'); ?>" id="logout_films">Déconnexion</a>
     </div>
 </form>
 
