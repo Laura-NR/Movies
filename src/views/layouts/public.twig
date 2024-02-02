@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../../public/css/style.css">
     <script src="/public/js/carousel.js" defer></script>
-    {# <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> #}
 
     <link rel="shortcut icon" href="../../../../public/images/mixxcinema-high-resolution-logo-darkmode.png" type="image/x-icon" id="favicon">
     <title>{% block title %}{% endblock %} | Movies</title>
@@ -41,5 +40,43 @@
     <main class="wrapper" style="margin-top:50px">
         {% block content %}{% endblock %}
     </main>
+    <footer>
+        <div class="blueBar"></div>
+        <div id="footerContent" class="wrapper">
+            <div class="footer_logo">
+                <a href=""><img src="/public/images/mixxcinema-high-resolution-logo-transparent (1) (1).svg" alt="Mixxcinema Logo"></a>
+            </div>
+            <div id="one">
+                <ul>
+                    <li><p>Contact:</p></li>
+                    <li><address>1 Rue du Jeu de Paume</address></li>
+                    <li><p>+33 075 216 4895</p></li>
+                </ul>
+            </div>
+            <div id="two">
+                <ul>
+                    <li><a href="">Terms and Conditions</a></li>
+                    <li><a href="">Privacy Policy</a></li>
+                    <li><a href="">Cookies Policy</a></li>
+                </ul>
+            </div>
+            <div id="three">
+                <ul>
+                    <li><a href="">About Us</a></li>
+                    <li><a href="">Application Mobile</a></li>
+                    <li><a href="">Mixxcinema Recrutes</a></li>
+                </ul>
+            </div>
+            <div id="social">
+                <p>Suivez-nous:</p>
+                <div id="icons">
+                    <a href=""><img src="/public/images/facebook-svgrepo-com (2).svg" alt="Facebook Icon"></a>
+                    <a href=""><img src="/public/images/Path 102.svg" alt="Twitter Icon"></a>
+                    <a href=""><img src="/public/images/Path 66.svg" alt="Instagram Icon"></a>
+                    <a href=""><img src="/public/images/Group 29.svg" alt="Youtube Icon"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
