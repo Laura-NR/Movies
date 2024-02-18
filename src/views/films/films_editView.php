@@ -77,9 +77,7 @@
                 <label for="category" class="form-label">Categorie: *</label>
                 <select class="form-select <?= $error['class']; ?>" aria-label="Default select example" id="category" name="category">
                     <option selected> </option>
-                    <option value="Science-Fiction">Science-Fiction</option>
-                    <option value="Action">Action</option>
-                    <option value="Horror">Horror</option>
+                    <?= categoriesOptions(); ?>
                 </select>
             <?= $error['message']; ?>
             <?= $errorsMessage['category']; ?>

@@ -80,11 +80,11 @@ function updateUser(): bool {
     $data = [
         'email' => $_POST['email'],
         'pwd' => password_hash($_POST['pwd'], PASSWORD_DEFAULT),
-        'role_id' => $_GET['id']
+        'id' => $_GET['id']
     ];
 
     try {
-        $sql = 'UPDATE users SET email = :email, pwd = :pwd, modified = NOW() WHERE role_id = :role_id';
+        $sql = 'UPDATE users SET email = :email, pwd = :pwd, modified = NOW() WHERE id = :id';
         $query = $db->prepare($sql);
         $query->execute($data);
         alert('Un utilisateur a été modifié avec success', 'success');

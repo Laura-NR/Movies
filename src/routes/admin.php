@@ -24,5 +24,5 @@ $router->map( 'GET|POST', $admin . '/films/supprimer/[uuid:id]', 'films/films_de
 // Categories
 $router->map( 'GET|POST', $admin . '/categories', 'categories/categories_display', 'listCategories');
 $router->map( 'GET|POST', $admin . '/categories/ajouter/editer', 'categories/categories_edit', 'addCategory');
-$router->map( 'GET|POST', $admin . '/categories/editer/[i:id]', 'categories/categories_edit', 'editCategory');
-$router->map( 'GET|POST', $admin . '/categories/supprimer/[i:id]', 'categories/categories_delete', 'deleteCategory');
+$router->map( 'GET|POST', $admin . '/categories/editer/[uuid:id]', 'categories/categories_edit', 'editCategory');
+$router->map( 'GET|POST', $admin . '/categories/supprimer/[uuid:id]', 'categories/categories_delete', 'deleteCategory');

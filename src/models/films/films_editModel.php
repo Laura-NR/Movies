@@ -64,6 +64,36 @@ function renameFile(string $name) {
 	return $name;
 };
 
+
+
+function categoriesOptions() {
+    global $db;
+
+    try {
+        $sql = 'SELECT * FROM categories';
+        $query = $db->prepare($sql);
+        $query->execute();
+
+        $options = ''; // Initialize an empty string to hold the options
+
+        $categories = $query->fetchAll(PDO::FETCH_ASSOC); // Fetch as associative array
+
+        foreach ($categories as $option) {
+            $options .= '<option value="' . $option['id'] . '">' . $option['name_category'] . '</option>';
+        }
+
+        return $options; // Return the generated options
+
+    } catch (PDOException $e) {
+        if ($_ENV['DEBUG'] == 'true') {
+            dump($e->getMessage());
+            die;
+        } else {
+            alert ('Une erreur est survenue. Merci de réessayer plus tard', 'danger');
+        } 
+    }
+}
+
 //Add a new film to the database
 function addFilm(): bool {
 

@@ -55,7 +55,7 @@ function addCategory() {
     ];
 
     try {
-        $sql = 'INSERT INTO categories (name_category) VALUES (:name_category)';
+        $sql = 'INSERT INTO categories (id, name_category) VALUES (UUID(), :name_category)';
         $query = $db->prepare($sql);
         $query->execute($data);
         alert('Une categorie a été ajouté avec success', 'success');
