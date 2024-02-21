@@ -3,12 +3,7 @@
 
 {% block content %}
     <section id="carousel-section" aria-label="Best Movies">
-        <div id="img_buttons" data-carousel>
-            <button class="prev" data-carousel-button="prev"><svg xmlns="http://www.w3.org/2000/svg" fill="#A1A1A5" width="80" height="80" viewBox="0 0 24 24" 
-                xmlns:v="https://vecta.io/nano"><path opacity="0" d="M24 0v24H0V0z"/><path d="M11.64 5.23a1 1 0 0 0-1.41.13l-5 6a1 1 
-                0 0 0 0 1.27l4.83 6a1.003 1.003 0 0 0 1.56-1.26L7.29 12l4.48-5.37a1 1 0 0 0-.13-1.4zM14.29 12l4.48-5.37a1.001 1.001 0 
-                0 0-1.54-1.28l-5 6a1 1 0 0 0 0 1.27l4.83 6a1.003 1.003 0 0 0 1.56-1.26z"/></svg>
-            </button>
+        <div class="wrapper" id="img_buttons" data-carousel>
             <div class="carousel">
                 <ul data-slides>
                     <li class="slide" data-index="0"><img src="/public/images/Untitled-1-min.jpg" alt="Movies Collage #1"></li>
@@ -16,11 +11,6 @@
                     <li class="slide" data-index="2"><img src="/public/images/Untitled-3-min.jpg" alt="Movies Collage #3"></li>
                 </ul>
             </div>
-            <button class="next" data-carousel-button="next"><svg xmlns="http://www.w3.org/2000/svg" fill="#000000" width="80" height="80" viewBox="0 0 24 24" 
-                xmlns:v="https://vecta.io/nano"><path opacity="0" d="M0 24V0h24v24z"/><path d="M18.78 11.37l-4.78-6a1.003 1.003 0 1 
-                0-1.56 1.26L16.71 12l-4.48 5.37A1 1 0 0 0 13 19a1 1 0 0 0 .77-.36l5-6a1 1 0 0 0 .01-1.27zM7 5.37a1.022 1.022 0 0 0-1.61 
-                1.26L9.71 12l-4.48 5.36a1 1 0 0 0 1.54 1.28l5-6a1 1 0 0 0 0-1.27z"/></svg>
-            </button>
         </div>
         <div id="dots">
             <ul>
@@ -36,18 +26,12 @@
             <hr>
         </div>
         <div id="next_dates_slides">
-            <button class="prev_movie">
-                <img src="/public/images/Path 37.svg" alt="">
-            </button>
             {% for movie in movies | slice(0, 3) %}
             <div class="premier_movie">
                 <img src="{{ movie.poster }}" alt="{{ movie.title }}">
                 <h3>{{ movie.title }}</h3>
             </div>
             {% endfor %}
-            <button class="next_movie">
-                <img src="/public/images/Path 38.svg" alt="">
-            </button>
         </div>
     </section>
     <section id="popular">
@@ -56,18 +40,12 @@
             <hr>
         </div>
         <div id="populaires_slides">
-            <button class="prev_movie">
-                <img src="/public/images/Path 37.svg" alt="">
-            </button>
             {% for movie in movies | slice(4, 3) %}
             <div class="popular_movie">
                 <img src="{{ movie.poster }}" alt="{{ movie.title }}">
                 <h3>{{ movie.title }}</h3>
             </div>
             {% endfor %}
-            <button class="next_movie">
-                <img src="/public/images/Path 38.svg" alt="">
-            </button>
         </div>
         <button>
             Voir tous <svg xmlns="http://www.w3.org/2000/svg" width="25" height="16" xmlns:v="https://vecta.io/nano">

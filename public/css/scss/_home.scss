@@ -1,17 +1,15 @@
 #carousel-section {
-    max-width: 1400px;
+    max-width: 1300px;
     width: 100%;
     margin-top: 20px;
     display: flex;
     flex-direction: column;
 
     #img_buttons {
+        margin-left: auto;
+        margin-right: auto;
         display: flex;
         flex-direction: row;
-
-        button {
-            @include button; 
-        }
 
         img {
             width: 1150px;
@@ -77,15 +75,6 @@
         flex-direction: row;
         justify-content: space-around;
 
-        button {
-            @include button;
-
-            img {
-                width: 30px;
-                height: auto;
-            }
-        }
-
 
         div {
             text-align: center;
@@ -134,15 +123,6 @@
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-
-        button {
-            @include button;
-
-            img {
-                width: 30px;
-                height: auto;
-            }
-        }
 
 
         div {

@@ -32,7 +32,14 @@ function checkAlreadyExistFilm(): mixed {
     $query->bindParam(':title', $_POST['title'], PDO::PARAM_STR);
     $query->execute();
 
-    return $query->fetch();
+    $movie = $query->fetch(PDO::FETCH_ASSOC);
+    var_dump($movie);
+
+    if ($movie && array_key_exists('id', $movie)) {
+        return $movie['id'] != $_GET['id'];
+    }
+
+    return false;
 };
 
 function formatBytes($size, $precision = 2) {
@@ -94,6 +101,13 @@ function categoriesOptions() {
     }
 }
 
+function generateSlug($title) {
+    $slug = strtolower($title);  // Convert title to lowercase
+    $slug = preg_replace('/[^a-z0-9]+/', '-', $slug);  // Replace non-alphanumeric characters with hyphens
+    $slug = trim($slug, '-');  // Remove leading and trailing hyphens
+    return $slug;
+}
+
 //Add a new film to the database
 function addFilm(): bool {
 
@@ -117,8 +131,12 @@ function addFilm(): bool {
 
     move_uploaded_file($uploadedFile['tmp_name'], $destination);
 
+    $title = $_POST['title'];
+    $slug = generateSlug($title);
+
     $data = [
-        'title' => $_POST['title'],
+        'title' => $title,
+        'slug' => $slug,
         'note_press' => $_POST['note_press'],
         'date_release' => $_POST['date_release'],
         'duration' => $_POST['duration'],
@@ -131,8 +149,8 @@ function addFilm(): bool {
 
 
     try {
-        $sql = 'INSERT INTO movies (id, title, note_press, date_release, duration, director, category, casting, synopsis, poster) 
-                VALUES (UUID(), :title, :note_press, :date_release, :duration, :director, :category, :casting, :synopsis, :poster)';
+        $sql = 'INSERT INTO movies (id, title, slug, note_press, date_release, duration, director, category, casting, synopsis, poster) 
+                VALUES (UUID(), :title, :slug, :note_press, :date_release, :duration, :director, :category, :casting, :synopsis, :poster)';
         $query = $db->prepare($sql);
         $query->execute($data);
     } catch (PDOException $e) {
