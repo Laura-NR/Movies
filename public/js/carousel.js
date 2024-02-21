@@ -54,4 +54,30 @@ document.addEventListener("DOMContentLoaded", function () {
     autoRotate(); // Start auto rotation
 });
 
+$(document).ready(function() {
+    var slideIndex = 0;
+    var slides = $('.premier_movie');
+    var totalSlides = slides.length;
+
+    // Show the first slide initially
+    showSlide(slideIndex);
+
+    // Previous button functionality
+    $('.prev_movie').click(function() {
+        slideIndex = (slideIndex - 1 + totalSlides) % totalSlides;
+        showSlide(slideIndex);
+    });
+
+    // Next button functionality
+    $('.next_movie').click(function() {
+        slideIndex = (slideIndex + 1) % totalSlides;
+        showSlide(slideIndex);
+    });
+
+    // Function to show a particular slide
+    function showSlide(index) {
+        slides.hide().eq(index).show();
+    }
+});
+
 

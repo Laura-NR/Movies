@@ -32,26 +32,20 @@
     </section>
     <section id="next_dates">
         <div class="wrapper">
-            <h2>Prochaines dates de sortie</h2>
+            <h2>Dernières dates de sortie</h2>
             <hr>
         </div>
         <div id="next_dates_slides">
-            <button>
+            <button class="prev_movie">
                 <img src="/public/images/Path 37.svg" alt="">
             </button>
-            <div>
-                <img src="/public/images/alien_romulus.png" alt="">
-                <h3>Alien Romulus</h3>
+            {% for movie in movies | slice(0, 3) %}
+            <div class="premier_movie">
+                <img src="{{ movie.poster }}" alt="{{ movie.title }}">
+                <h3>{{ movie.title }}</h3>
             </div>
-            <div>
-                <img src="/public/images/dune_deuxieme_partie.png" alt="">
-                <h3>Dune</h3>
-            </div>
-            <div>
-                <img src="/public/images/joker_folie_a_deux.png" alt="">
-                <h3>Joker : Folie à Deux</h3>
-            </div>
-            <button>
+            {% endfor %}
+            <button class="next_movie">
                 <img src="/public/images/Path 38.svg" alt="">
             </button>
         </div>
@@ -62,22 +56,16 @@
             <hr>
         </div>
         <div id="populaires_slides">
-            <button>
+            <button class="prev_movie">
                 <img src="/public/images/Path 37.svg" alt="">
             </button>
-            <div>
-                <img src="/public/images/el_hoyo-987825598-large-l_cover.jpg" alt="">
-                <h3>El Hoyo</h3>
+            {% for movie in movies | slice(4, 3) %}
+            <div class="popular_movie">
+                <img src="{{ movie.poster }}" alt="{{ movie.title }}">
+                <h3>{{ movie.title }}</h3>
             </div>
-            <div>
-                <img src="/public/images/MV5BMDBmYTZjNjUtN2M1MS00MTQ2LTk2ODgtNzc2M2QyZGE5NTVjXkEyXkFqcGdeQXVyNzAwMjU2MTY@.jpg" alt="">
-                <h3>Dune</h3>
-            </div>
-            <div>
-                <img src="/public/images/Untitled-2.jpg" alt="">
-                <h3>Joker : Folie à Deux</h3>
-            </div>
-            <button>
+            {% endfor %}
+            <button class="next_movie">
                 <img src="/public/images/Path 38.svg" alt="">
             </button>
         </div>

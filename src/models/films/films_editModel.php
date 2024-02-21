@@ -98,7 +98,7 @@ function categoriesOptions() {
 function addFilm(): bool {
 
     global $db;
-
+    global $router;
 
     // File upload handling
     $uploadDirectory = "uploads/";  // Directory to store the uploaded files
