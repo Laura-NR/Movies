@@ -16,14 +16,17 @@
                 <a href=""><img src="../../../../public/images/mixxcinema-high-resolution-logo-transparent (1) (1).svg" alt="Mixxcinema logo"></a>
             </div>
             <div id="header-elements"> <!--Div section for icons and search bar-->
-                <button><img src="../../../../public/images/funnel.svg" alt="funnel"></button> <!--Filters button-->
                 <form action="" class="searchbar"> <!--Search bar-->
                     <input type="text" id="search">
                     <img src="../../../../public/images/search_magnifying_glass.svg" alt="Magnifying glass icon">
                 </form>
-                <button><img src="../../../../public/images/Dark-Mode.svg" alt="dark-mode"></button>  
-                <button><img src="../../../../public/images/user_icon.svg" alt="user"></button>
-                <button><img src="../../../../public/images/settings_icon.svg" alt="settings"></button>
+                <div id="header_buttons">
+                    <button><img src="../../../../public/images/funnel.svg" alt="funnel"></button> <!--Filters button-->
+                    <button><img src="../../../../public/images/Dark-Mode.svg" alt="dark-mode"></button>  
+                    <button><img src="../../../../public/images/user_icon.svg" alt="user"></button>
+                    <button><img src="../../../../public/images/settings_icon.svg" alt="settings"></button>
+                </div>
+                <button id="menu_button"><img src="/public/images/menu-svgrepo-com.svg" alt="Menu"></button>
             </div>
         </div>
         <nav> <!--Nav section for menu-->
@@ -34,6 +37,12 @@
                 <a href="">Animation 3D <img src="../../../../public/images/arrow-down.svg" alt="Arrow point down"></a>
                 <a href="">Anime <img src="../../../../public/images/arrow-down.svg" alt="Arrow point down"></a>
                 <a href="">Court-Métrages <img src="../../../../public/images/arrow-down.svg" alt="Arrow point down"></a>
+                <button id="nav_menu_button">
+                    <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 6H20M4 12H20M4 18H20" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Choose a category
+                </button>
             </div>
         </nav>
     </header>

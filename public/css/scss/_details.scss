@@ -1,5 +1,6 @@
 #filmDetails {
     width: 900px;
+    height: 55vh;
     max-width: 1200px;
     display: flex;
     flex-wrap: nowrap;
@@ -12,30 +13,30 @@
         width: 30%;
 
         img {
-            width: 260px;
+            width: 350px;
             object-fit: contain;
         }
     }
 
     #filmInfo {
-        width: 65%;
+        width: 55%;
 
         h1 {
-            font-size: 28px;
+            font-size: 36px;
             font-weight: 700;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
 
         ul {
             font-size: 18px;
             line-height: 22px;
-            margin-bottom: 30px;
+            margin-bottom: 45px;
         }
 
         p {
-            font-size: 18px;
+            font-size: 22px;
             text-align: start;
-            line-height: 24px;
+            line-height: 28px;
         }
     }
 }
