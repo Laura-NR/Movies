@@ -241,9 +241,6 @@ footer #footerContent #social #icons img {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  /* .active-dot {
-      background-color: #060623;
-  } */
 }
 #carousel-section #dots ul #el_1 {
   border-radius: 50%;
@@ -255,9 +252,11 @@ footer #footerContent #social #icons img {
   border-radius: 50%;
   width: 10px;
   height: 10px;
-  background-color: #ffffff;
   border: 2px solid #060623;
   margin-left: 3px;
+}
+#carousel-section #dots ul .active-dot {
+  background-color: #060623;
 }
 
 #next_dates {

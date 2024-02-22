@@ -38,14 +38,13 @@
                 
             #el_2, #el_3 {
                 @include ellipse;
-                background-color: #ffffff;
                 border: 2px solid #060623;
                 margin-left: 3px;
             }
 
-            /* .active-dot {
+            .active-dot {
                 background-color: #060623;
-            } */
+            }
         } 
     }
 
@@ -133,7 +132,7 @@
 
         a {
             @include link;
-            
+
             div {
                 text-align: center;
 

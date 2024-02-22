@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function showSlide(index) {
         console.log("showSlide function");
         console.log(index);
+        console.log("Dots:", dots);
         slides.forEach((slide, i) => {
             //slide.classList.toggle('active', i === index);
             if (i === index) {
@@ -17,9 +18,13 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
-        /* dots.forEach((dot, i) => {
-            dot.classList.toggle('active', i === index);
-        }); */
+        // Remove 'active-dot' class from all dots
+        dots.forEach((dot, i) => {
+            dot.classList.remove('active-dot');
+        });
+
+        // Add 'active-dot' class to the dot corresponding to the active slide
+        dots[index].classList.add('active-dot');
     }
 
     function updateCarousel(direction) {
