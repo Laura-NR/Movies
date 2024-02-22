@@ -2,19 +2,24 @@
 {% block title %}Détails du film {{ movie.title }}{% endblock %}
 
 {% block content %}
-<div id="filmDetails">
-	<div class="col">
-		<h1 class="title-main">{{ movie.title }}</h1>
-		<p>{{ movie.synopsis }}</p>
+<div class="wrapper">
+	<div id="filmDetails">
+		<div class="col" id="imagePoster">
+			<img src="/public/{{ movie.poster }}" alt="{{ movie.title }}">
+		</div>
+		<div class="col" id="filmInfo">
+			<h1 class="title-main">{{ movie.title }}</h1>
 
-		<ul>
-			<li>Date de sortie : {{ movie.date|date('d/m/Y') }}</li>
-			<li>Durée : {{ movie.duration|date('H:i:s')}}</li>
-			<li class="note-press">Note de la presse : {{ movie.note_press }} / 10</li>
-		</ul>
-	</div>
-	<div class="col">
-		<img src="/uploads/bkpra.jpg" alt="{{ movie.title }}">
+			<ul>
+				<li>Date de sortie : {{ movie.date|date('d/m/Y') }}</li>
+				<li>Durée : {{ movie.duration|date('H:i:s')}}</li>
+				<li class="note-press">Note de la presse : {{ movie.note_press }} / 10</li>
+			</ul>
+
+			
+			<p>{{ movie.synopsis }}</p>
+		</div>
 	</div>
 </div>
+
 {% endblock %}

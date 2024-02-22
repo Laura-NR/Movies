@@ -371,4 +371,40 @@ footer #footerContent #social #icons img {
   fill: #F7B32B;
 }
 
+#filmDetails {
+  width: 900px;
+  max-width: 1200px;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 50px;
+  margin-bottom: 70px;
+}
+#filmDetails #imagePoster {
+  width: 30%;
+}
+#filmDetails #imagePoster img {
+  width: 260px;
+  object-fit: contain;
+}
+#filmDetails #filmInfo {
+  width: 65%;
+}
+#filmDetails #filmInfo h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+#filmDetails #filmInfo ul {
+  font-size: 18px;
+  line-height: 22px;
+  margin-bottom: 30px;
+}
+#filmDetails #filmInfo p {
+  font-size: 18px;
+  text-align: start;
+  line-height: 24px;
+}
+
 /*# sourceMappingURL=style.css.map */
