@@ -27,7 +27,7 @@
         </div>
         <div id="next_dates_slides">
             {% for movie in movies | slice(0, 3) %}
-                <a href="">
+                <a href="{{ getUrl('details', { slug: movie.slug }) }}">
                     <div class="premier_movie">
                         <img src="{{ movie.poster }}" alt="{{ movie.title }}">
                         <h3>{{ movie.title }}</h3>
@@ -43,7 +43,7 @@
         </div>
         <div id="populaires_slides">
             {% for movie in movies | slice(4, 3) %}
-                <a href="">
+                <a href="{{ getUrl('details', { slug: movie.slug }) }}">
                     <div class="popular_movie">
                         <img src="{{ movie.poster }}" alt="{{ movie.title }}">
                         <h3>{{ movie.title }}</h3>

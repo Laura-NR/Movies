@@ -9,3 +9,7 @@
     width: 10px;
     height: 10px;
 }
+
+@mixin link {
+    text-decoration: none;
+}

@@ -284,15 +284,18 @@ footer #footerContent #social #icons img {
   flex-direction: row;
   justify-content: space-around;
 }
-#next_dates #next_dates_slides div {
+#next_dates #next_dates_slides a {
+  text-decoration: none;
+}
+#next_dates #next_dates_slides a div {
   text-align: center;
 }
-#next_dates #next_dates_slides div img {
+#next_dates #next_dates_slides a div img {
   width: 275px;
   height: 340px;
   object-fit: cover;
 }
-#next_dates #next_dates_slides div h3 {
+#next_dates #next_dates_slides a div h3 {
   font-size: 24px;
   color: #060623;
   font-weight: 600;
@@ -324,15 +327,18 @@ footer #footerContent #social #icons img {
   flex-direction: row;
   justify-content: space-around;
 }
-#popular #populaires_slides div {
+#popular #populaires_slides a {
+  text-decoration: none;
+}
+#popular #populaires_slides a div {
   text-align: center;
 }
-#popular #populaires_slides div img {
+#popular #populaires_slides a div img {
   width: 275px;
   height: 340px;
   object-fit: cover;
 }
-#popular #populaires_slides div h3 {
+#popular #populaires_slides a div h3 {
   font-size: 24px;
   color: #060623;
   font-weight: 600;
