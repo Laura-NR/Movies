@@ -10,16 +10,16 @@ document.addEventListener("DOMContentLoaded", function () {
         slides.forEach((slide, i) => {
             //slide.classList.toggle('active', i === index);
             if (i === index) {
-                slide.dataset.active = true;                
+                slide.dataset.active = true;
             }
-            else{
+            else {
                 delete slide.dataset.active
             }
         });
 
-        dots.forEach((dot, i) => {
+        /* dots.forEach((dot, i) => {
             dot.classList.toggle('active', i === index);
-        });
+        }); */
     }
 
     function updateCarousel(direction) {

@@ -2,3 +2,5 @@
 
 
 $data['movies'] = getMovies();
+
+

@@ -11,7 +11,7 @@ $router->map( 'GET', '/profil', 'profile');
 
 // Movies
 $router->map( 'GET', '/', 'home', 'home');
-$router->map( 'GET', '/film/[slug:slug]', 'filmDetails', 'details');
+$router->map( 'GET|POST', '/film/[slug:slug]', 'filmDetails', 'details');
 $router->map( 'GET', '/recherche', 'search');
 
 // Pages
