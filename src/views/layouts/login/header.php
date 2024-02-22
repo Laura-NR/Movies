@@ -10,4 +10,4 @@
     <title><?= $title; ?> | Movies</title>
 </head>
 <body>
-    <?php displayAlert(); ?>
+    <?php displayAlert(); ?> <!--Call to function to display connection messages-->

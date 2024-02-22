@@ -147,15 +147,15 @@
             </div>
         </div>
         <nav>
-            <div class="wrapper">
+            <div class="wrapper"> <!--Link to users display-->
                 <a href="<?= $router->generate('users'); ?>">Users<svg xmlns="http://www.w3.org/2000/svg" width="18.467" height="9.626" xmlns:v="https://vecta.io/nano">
                     <path d="M17.962 0H1.5A1.5 1.5 0 0 0 .443 2.558l7.2 7.2c1.156 1.154 3.029 1.154 4.185 0L14.57 7.02l4.463-4.463A1.5 
                     1.5 0 0 0 17.962 0z" fill="#060623"/></svg>
-                </a>
+                </a> <!--Link to movies display-->
                 <a href="<?= $router->generate('listMovies'); ?>">Films<svg xmlns="http://www.w3.org/2000/svg" width="18.467" height="9.626" xmlns:v="https://vecta.io/nano">
                     <path d="M17.962 0H1.5A1.5 1.5 0 0 0 .443 2.558l7.2 7.2c1.156 1.154 3.029 1.154 4.185 0L14.57 7.02l4.463-4.463A1.5 
                     1.5 0 0 0 17.962 0z" fill="#060623"/></svg>
-                </a>
+                </a> <!--Link to categories display-->
                 <a href="<?= $router->generate('listCategories'); ?>">Categories<svg xmlns="http://www.w3.org/2000/svg" width="18.467" height="9.626" xmlns:v="https://vecta.io/nano">
                     <path d="M17.962 0H1.5A1.5 1.5 0 0 0 .443 2.558l7.2 7.2c1.156 1.154 3.029 1.154 4.185 0L14.57 7.02l4.463-4.463A1.5 1.5 
                     0 0 0 17.962 0z" fill="#060623"/></svg>
@@ -164,4 +164,4 @@
         </nav>
     </header>
     <main class="container mb-4">
-        <?php displayAlert(); ?>
+        <?php displayAlert(); ?> <!--Funtion to display alerts-->

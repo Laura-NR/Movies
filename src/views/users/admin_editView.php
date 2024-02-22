@@ -36,11 +36,11 @@
 
 <form action="" method="post" novalidate>
     <div class="mb-4">
-        <?php $error = checkEmptyFields('email'); ?>
+        <?php $error = checkEmptyFields('email'); ?> <!--Function to very if field is empty-->
             <label for="email" class="form-label">Adresse email: *</label>
             <input type="email" id="email" name="email" value="<?= getValueField('email'); ?>" class="form-control <?= $error['class']; ?>">
-        <?= $error['message']; ?>
-        <?= $errorsMessage['email']; ?>
+        <?= $error['message']; ?> <!--Call to function to display error messages-->
+        <?= $errorsMessage['email']; ?> <!--Function to display error messages specific to email-->
     </div>
     <div class="mb-4">
         <?php $error = checkEmptyFields('email'); ?>
@@ -48,14 +48,14 @@
             <input type="password" id="pwd" name="pwd" value="<?= getValueField('pwd'); ?>" class="form-control <?= $error['class']; ?>">
             <p class="form-text mb-0">Règles de mot de passe</p>
         <?= $error['message']; ?>
-        <?= $errorsMessage['pwd']; ?>
+        <?= $errorsMessage['pwd']; ?> <!--Function to display error messages specific to pwd-->
     </div>
     <div class="mb-4">
         <?php $error = checkEmptyFields('email'); ?>
             <label for="pwdConfirm" class="form-label">Confirmation du mot de passe: *</label>
             <input type="password" id="pwdConfirm" name="pwdConfirm" value="<?= getValueField('pwdConfirm'); ?>" class="form-control <?= $error['class']; ?>">
         <?= $error['message']; ?>
-        <?= $errorsMessage['pwdConfirm']; ?>
+        <?= $errorsMessage['pwdConfirm']; ?> <!--Function to display error messages specific to pwdConfirm-->
     </div>
     <div>
         <input type="submit" value="Sauvegarder" id="submit_button">

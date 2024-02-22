@@ -97,10 +97,10 @@
         <form action="" method="post" class="form-signin w-100 m-auto">
             <h1 class="h3 mb-3 fw-normal text-center">Authentification</h1>
             <div class="form-floating">
-                <?php $error = checkEmptyFields('email'); ?>
+                <?php $error = checkEmptyFields('email'); ?> <!--Function to very if field is empty-->
                 <input type="email" name="email" class="inputField <?= $error['class']; ?>" id="floatingInput" placeholder="Email">
                 <label for="floatingInput">Email</label>
-                <?= $error['message']; ?>
+                <?= $error['message']; ?> <!--Call to function to display error messages-->
             </div>
             <div class="form-floating">
                 <?php $error = checkEmptyFields('pwd'); ?>
@@ -109,7 +109,7 @@
                 <?= $error['message']; ?>
             </div>
             <button class="connect" type="submit">Connexion</button>
-            <p class="mt-4 mb-3 text-body-secondary text-center">
+            <p class="mt-4 mb-3 text-body-secondary text-center"> <!--Generate link-->
                 <a href="<?= $router->generate('lostPassword'); ?>">Mot de passe oublié ?</a>
             </p>
         </form>

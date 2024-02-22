@@ -1,5 +1,6 @@
 <?php 
 
+//Get movies from database according to slug
 function getMovies() {
 
     global $db;

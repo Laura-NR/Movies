@@ -1,5 +1,6 @@
 <?php 
 
+//Stock movies from database 
 $movie = getMovies();
 
 if ($movie) {

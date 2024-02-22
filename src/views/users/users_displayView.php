@@ -82,7 +82,7 @@
 
 <div class="wrapper_users">
     <h2>Liste des utilisateurs</h2>
-
+    <!--Generate link to "addUser" and "logout"-->
     <a href="<?= $router->generate('addUser'); ?>" id="add_button_users">Ajouter +</a>
     <a href="<?= $router->generate('logout'); ?>" id="logout_users">Déconnexion</a>
 
@@ -94,10 +94,12 @@
             </tr>
         </thead>
         <tbody>
+            <!-- Loop through each user in the database to show in table -->
             <?php foreach ($users as $user) { ?>
                 <tr>
                     <td style="width: 75%;"><?= $user->email; ?></td>
                     <td id="links_users" style="width: 20%;">
+                        <!--Generate links to edit and delete users -->
                         <a href="<?= $router->generate('editUser', ['id' => $user->id]); ?>"><img src="/public/images/edit-pencil-line-01-svgrepo-com.svg" alt=""></a>
                         <a href="<?= $router->generate('deleteUser', ['id' => $user->id]); ?>"><img src="/public/images/trash.svg" alt=""></a>
                     </td>

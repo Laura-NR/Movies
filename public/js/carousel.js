@@ -11,10 +11,10 @@ document.addEventListener("DOMContentLoaded", function () {
         slides.forEach((slide, i) => {
             //slide.classList.toggle('active', i === index);
             if (i === index) {
-                slide.dataset.active = true;
+                slide.dataset.active = true; //Activate slide
             }
             else {
-                delete slide.dataset.active
+                delete slide.dataset.active //Deactivate slide
             }
         });
 

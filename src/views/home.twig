@@ -7,22 +7,25 @@
             <div class="carousel">
                 <ul data-slides>
                     <li class="slide" data-index="0">
+                        <!--Allow the browser to choose image according to screen width-->
                         <picture>
-                            <source media="" srcset="">
+                            <source media="(max-width: 700px)" srcset="\public\images\51SFTCp5ckL.jpg">
                             <img src="/public/images/Untitled-1-min.jpg" alt="Movies Collage #1">
                             <source>
                         </picture>
                     </li>
                     <li class="slide" data-index="1">
+                        <!--Allow the browser to choose image according to screen width-->
                         <picture>
-                            <source media="" srcset="">
+                            <source media="(max-width: 700px)" srcset="public\images\542760.jpg">
                             <img src="/public/images/Untitled-4-min.jpg" alt="Movies Collage #2">
                             <source>
                         </picture>
                     </li>
                     <li class="slide" data-index="2">
+                        <!--Allow the browser to choose image according to screen width-->
                         <picture>
-                            <source media="" srcset="">
+                            <source media="(max-width: 700px)" srcset="public\images\p9000544_p_v8_af.jpg">
                             <img src="/public/images/Untitled-3-min.jpg" alt="Movies Collage #3">
                             <source>
                         </picture>
@@ -30,7 +33,7 @@
                 </ul>
             </div>
         </div>
-        <div id="dots">
+        <div id="dots"> <!--Dots to be activated on slide change-->
             <ul>
                 <li><div id="el_1"></div></li>
                 <li><div id="el_2"></div></li>
@@ -44,6 +47,7 @@
             <hr>
         </div>
         <div id="next_dates_slides">
+            <!--Loop through movies to show the first three-->
             {% for movie in movies | slice(0, 3) %}
                 <a href="{{ getUrl('details', { slug: movie.slug }) }}">
                     <div class="premier_movie">
@@ -60,6 +64,7 @@
             <hr>
         </div>
         <div id="populaires_slides">
+            <!--Loop through movies to show the next three from the third on-->
             {% for movie in movies | slice(4, 3) %}
                 <a href="{{ getUrl('details', { slug: movie.slug }) }}">
                     <div class="popular_movie">
